@@ -1,0 +1,29 @@
+[package]
+name = "rcloc"
+version = "0.6.2"
+authors = ["ltoddy <taoliu0509@gmail.com>","Norfloxainer <1762161822@qq.com>"]
+edition = "2018"
+license = "MIT"
+readme = "README.md"
+keywords = ["cloc","rcloc"]
+description = "Count, or compute differences of, lines of source code and comments."
+repository = "https://github.com/ltoddy/cloc-rs"
+
+include = [
+    "src/**/*.rs",
+    "Cargo.toml",
+    "LICENSE",
+    "README.md"
+]
+
+[dependencies]
+structopt = "0.3"
+num_cpus = "1.0"
+lazy_static = "1.4"
+mimalloc = "0.1"
+
+[profile.release]
+opt-level = 'z'
+lto = true
+panic = 'abort'
+codegen-units = 1
