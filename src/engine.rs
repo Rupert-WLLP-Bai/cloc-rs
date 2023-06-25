@@ -49,6 +49,6 @@ impl Engine {
     fn read_ignore_list(filename: Option<PathBuf>) -> Option<Vec<PathBuf>> {
         filename
             .and_then(|filename| fs::read_to_string(filename).ok())
-            .map(|content| content.lines().map(|line| line.trim_start_matches("/")).filter_map(|path| fs::canonicalize(path).ok()).collect())
+            .map(|content| content.lines().map(|line| line.trim_start_matches('/')).filter_map(|path| fs::canonicalize(path).ok()).collect())
     }
 }

@@ -21,7 +21,7 @@ impl Spinner {
 
     pub fn start(&self) {
         let Self { cvar, lock } = self;
-        let pair = (Arc::clone(&lock), Arc::clone(&cvar));
+        let pair = (Arc::clone(lock), Arc::clone(cvar));
         spawn(move || {
             let mut out = stdout();
             for c in vec!['|', '/', '-', '\\'].iter().cycle() {

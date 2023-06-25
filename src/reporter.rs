@@ -27,7 +27,7 @@ impl Reporter {
         }
 
         Report {
-            sections: kinds.into_iter().map(|(_, value)| value).collect(),
+            sections: kinds.into_values().collect(),
             summary,
         }
     }

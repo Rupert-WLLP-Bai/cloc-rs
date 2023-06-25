@@ -58,7 +58,7 @@ impl Calculator {
         #[rustfmt::skip]
         let Info { language, single, multi, .. } = info;
 
-        let content = fs::read_to_string(&filename)?;
+        let content = fs::read_to_string(filename)?;
         let metadata = filename.metadata()?;
         let bytes = metadata.len();
         let mut blank = 0;
